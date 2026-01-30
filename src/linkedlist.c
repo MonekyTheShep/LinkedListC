@@ -10,7 +10,6 @@ LinkedList createList(int data)
     if (!list.head) 
     {
         fprintf(stderr, "Memory allocation failed\n");
-        free(list.head);
         return (LinkedList){NULL, NULL};
     }
 
@@ -27,7 +26,6 @@ Node *createNode(int data)
     if (!newNode) 
     {
         fprintf(stderr, "Memory allocation failed\n");
-        free(newNode);
         return NULL;
     }
 
