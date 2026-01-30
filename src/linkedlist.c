@@ -139,13 +139,13 @@ void popNode(LinkedList *list, Node *node)
     int hasNode = 0;
 
     // loop through list until it is the node
-    while (temp != node || temp != NULL)
+    while (temp != node)
     {
         // set new point to previous
         prev = temp;
         temp = temp->next;
 
-        if (node == temp && temp != NULL) {
+        if (node == temp) {
             hasNode = 1;
         }
     }
