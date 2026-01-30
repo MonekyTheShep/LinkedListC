@@ -22,17 +22,18 @@ int main(void) {
         }
     }  
 
-    Node *node2 = NULL;
-
-    popNode(&list, node2);
-
-
     // Check allocation
     if (!list.head) {
         printf("Memory allocation failed\n");
         return 1;
     }
      
+
+    Node *node2 = insertAtHead(&list, 4);
+
+    popNode(&list, node2);
+
+    printf("Is list empty: %d\n", isEmpty(&list));
 
     printf("%d\n", list.head->data);
     printf("%d\n", list.tail->data);

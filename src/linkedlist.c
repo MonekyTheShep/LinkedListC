@@ -8,7 +8,6 @@ LinkedList createList(int data)
     list.head = (Node *)malloc(sizeof(Node));
     list.head->data = data;
     list.tail = list.head;
-    list.created = 1;
     return list;
 }
 
@@ -21,12 +20,6 @@ Node *createNode(int data)
 
 Node *insertAtHead(LinkedList *list, int data)
 {
-    if (list->created == 0)
-    {
-        fprintf(stderr, "Please initialise the list.\n");
-        return NULL;
-    }
-
     Node *newNode = createNode(data);
 
     // swap the tail with new node
@@ -40,12 +33,6 @@ Node *insertAtHead(LinkedList *list, int data)
 
 Node *insertAtTail(LinkedList *list, int data)
 {
-   if (list->created == 0)
-    {
-        fprintf(stderr, "Please initialise the list.\n");
-        return NULL;
-    }
-
     Node *newNode = createNode(data);
 
     // swap the tail with new node
@@ -60,12 +47,6 @@ Node *insertAtTail(LinkedList *list, int data)
 
 Node *insertAtNode(LinkedList *list, Node *node, int data)
 {
-    if (list->created == 0)
-    {
-        fprintf(stderr, "Please initialise the list you want to insert at.\n");
-        return NULL;
-    }
-
     Node *newNode = createNode(data);
 
     if (node == list->head)
@@ -124,12 +105,6 @@ Node *insertAtNode(LinkedList *list, Node *node, int data)
 
 void popNode(LinkedList *list, Node *node)
 {
-    if (list->created == 0)
-    {
-        fprintf(stderr, "Please initialise the list you want to remove elements from.\n");
-        return;
-    }
-
     if (list->head->next == NULL)
     {
         fprintf(stderr, "Cant pop head if there are no other elements.\n");
@@ -184,12 +159,6 @@ void popNode(LinkedList *list, Node *node)
 
 Node *shiftList(LinkedList *list)
 {
-    if (list->created == 0)
-    {
-        fprintf(stderr, "Please initialise the list you want to shift elements from.\n");
-        return NULL;
-    }
-
     if (list->head->next == NULL)
     {
         fprintf(stderr, "Cant shift head without other elements\n");
@@ -228,21 +197,15 @@ int sizeOfLinkedList(LinkedList *list)
 int isEmpty(LinkedList *list) {
     if (list->head->next == NULL)
     {
-        return 0;
+        return 1;
     } 
     else {
-        return 1;
+        return 0;
     }
 }
 
 void printLinkedList(LinkedList *list)
 {
-    if (list->created == 0)
-    {
-        fprintf(stderr, "Please initialise the list.\n");
-        return;
-    }
-
     // Print linked list
     Node *temp = list->head;
 
@@ -257,12 +220,6 @@ void printLinkedList(LinkedList *list)
 
 void freeLinkedList(LinkedList *list)
 {
-    if (list->created == 0)
-    {
-        fprintf(stderr, "Please initialise the list.\n");
-        return;
-    }
-
     // Free allocated memory
     Node *temp = list->head;
     while (temp != NULL)
