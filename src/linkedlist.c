@@ -7,7 +7,8 @@ LinkedList createList(int data)
     LinkedList list;
     list.head = (Node *)malloc(sizeof(Node));
 
-    if (!list.head) {
+    if (!list.head) 
+    {
         fprintf(stderr, "Memory allocation failed\n");
         free(list.head);
         return (LinkedList){NULL, NULL};
@@ -23,7 +24,8 @@ Node *createNode(int data)
     Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = data;
 
-    if (!newNode) {
+    if (!newNode) 
+    {
         fprintf(stderr, "Memory allocation failed\n");
         free(newNode);
         return NULL;
@@ -62,7 +64,8 @@ Node *insertAtTail(LinkedList *list, int data)
 Node *insertAtNode(LinkedList *list, Node *node, int data)
 {
 
-    if (node == NULL) {
+    if (node == NULL) 
+    {
         fprintf(stderr, "Cant insert NULL node.\n");
         return NULL;
     }
@@ -102,13 +105,15 @@ Node *insertAtNode(LinkedList *list, Node *node, int data)
 
         temp = temp->next;
 
-        if (temp == node) {
+        if (temp == node) 
+        {
             hasNode = 1;
         }
 
     }
 
-    if (!hasNode) {
+    if (!hasNode) 
+    {
         fprintf(stderr, "Node not found in list.\n");
         free(newNode);
         return NULL;
@@ -126,7 +131,8 @@ Node *insertAtNode(LinkedList *list, Node *node, int data)
 
 void popNode(LinkedList *list, Node *node)
 {
-    if (node == NULL) {
+    if (node == NULL) 
+    {
         fprintf(stderr, "Cant pop NULL node.\n");
         return;
     }
@@ -157,18 +163,21 @@ void popNode(LinkedList *list, Node *node)
         prev = temp;
         temp = temp->next;
 
-        if (node == temp) {
+        if (node == temp) 
+        {
             hasNode = 1;
         }
     }
 
-    if (!hasNode) {
+    if (!hasNode) 
+    {
         fprintf(stderr, "Node not found in list.\n");
         return;
     }
 
     // if its the tail set tail to previous element and remove current tail
-    if (node == list->tail) {    
+    if (node == list->tail) 
+    {    
         free(node);
         list->tail = prev;
         // tail always points to null address
@@ -225,7 +234,8 @@ int isEmpty(LinkedList *list) {
     {
         return 1;
     } 
-    else {
+    else 
+    {
         return 0;
     }
 }
