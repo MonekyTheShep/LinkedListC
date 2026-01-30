@@ -61,6 +61,12 @@ Node *insertAtTail(LinkedList *list, int data)
 
 Node *insertAtNode(LinkedList *list, Node *node, int data)
 {
+
+    if (node == NULL) {
+        fprintf(stderr, "Cant insert NULL node.\n");
+        return NULL;
+    }
+
     Node *newNode = createNode(data);
 
     if (node == list->head)
@@ -120,6 +126,11 @@ Node *insertAtNode(LinkedList *list, Node *node, int data)
 
 void popNode(LinkedList *list, Node *node)
 {
+    if (node == NULL) {
+        fprintf(stderr, "Cant pop NULL node.\n");
+        return;
+    }
+
     if (list->head->next == NULL)
     {
         fprintf(stderr, "Cant pop head if there are no other elements.\n");
