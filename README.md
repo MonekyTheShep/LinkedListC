@@ -3,9 +3,9 @@ Linked List implementation in c
 
 ## Example Usage
 ```c
-int i = 0;
+int i;
 LinkedList list;
-for (; i < 9; ++i) {
+for (i = 0; i < 9; ++i) {
     if (i == 0) {
         list = createList(i);
         continue;
