@@ -2,14 +2,10 @@
 #include <stdlib.h>
 #include "linkedlist.h"
 
-
-// Node *node = shiftList(&list);
-// node = insertAtTail(&list, node->data);
-
 int main(void) {
     LinkedList list;
     list = createList(0);
-    
+
     for (int i = 1; i < 9; ++i) {
         Node *node = insertAtTail(&list, i);
     }  
