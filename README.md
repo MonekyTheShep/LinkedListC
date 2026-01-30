@@ -3,9 +3,9 @@ Linked List implementation in c
 
 ## Example Usage
 ```c
-int i = 0;
+int i;
 LinkedList list;
-for (; i < 9; ++i) {
+for (i = 0; i < 9; ++i) {
     if (i == 0) {
         list = createList(i);
         continue;
@@ -25,17 +25,12 @@ if (!list.head) {
 }
      
 
-Node *node2 = insertAtHead(&list, 4);
-
-
 printf("Is list empty: %d\n", isEmpty(&list));
+printLinkedList(&list);
+printf("size: %d\n", sizeOfLinkedList(&list));
 
 printf("%d\n", list.head->data);
 printf("%d\n", list.tail->data);
-
-printLinkedList(&list);
-
-printf("size: %d\n", sizeOfLinkedList(&list));
 
 freeLinkedList(&list);
 
