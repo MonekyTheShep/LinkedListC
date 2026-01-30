@@ -25,17 +25,12 @@ if (!list.head) {
 }
      
 
-Node *node2 = insertAtHead(&list, 4);
-
-
 printf("Is list empty: %d\n", isEmpty(&list));
+printLinkedList(&list);
+printf("size: %d\n", sizeOfLinkedList(&list));
 
 printf("%d\n", list.head->data);
 printf("%d\n", list.tail->data);
-
-printLinkedList(&list);
-
-printf("size: %d\n", sizeOfLinkedList(&list));
 
 freeLinkedList(&list);
 
