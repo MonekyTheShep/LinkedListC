@@ -23,7 +23,7 @@ Node *insertAtHead(LinkedList *list, int data)
 {
     if (list->created == 0)
     {
-        printf("Please initialise the list.\n");
+        fprintf(stderr, "Please initialise the list.\n");
         return NULL;
     }
 
@@ -42,7 +42,7 @@ Node *insertAtTail(LinkedList *list, int data)
 {
    if (list->created == 0)
     {
-        printf("Please initialise the list.\n");
+        fprintf(stderr, "Please initialise the list.\n");
         return NULL;
     }
 
@@ -62,7 +62,7 @@ Node *insertAtNode(LinkedList *list, Node *node, int data)
 {
     if (list->created == 0)
     {
-        printf("Please initialise the list you want to insert at\n");
+        fprintf(stderr, "Please initialise the list you want to insert at.\n");
         return NULL;
     }
 
@@ -107,7 +107,7 @@ Node *insertAtNode(LinkedList *list, Node *node, int data)
     }
 
     if (!hasNode) {
-        printf("Node not found in list.\n");
+        fprintf(stderr, "Node not found in list.\n");
         free(newNode);
         return NULL;
     }
@@ -126,13 +126,13 @@ void popNode(LinkedList *list, Node *node)
 {
     if (list->created == 0)
     {
-        printf("Please initialise the list you want to remove elements from.\n");
+        fprintf(stderr, "Please initialise the list you want to remove elements from.\n");
         return;
     }
 
     if (list->head->next == NULL)
     {
-        printf("Cant pop head if there are no other elements.\n");
+        fprintf(stderr, "Cant pop head if there are no other elements.\n");
         return;
     }
 
@@ -150,19 +150,19 @@ void popNode(LinkedList *list, Node *node)
     int hasNode = 0;
 
     // loop through list until it is the node
-    while (temp != node)
+    while (temp != node || temp != NULL)
     {
         // set new point to previous
         prev = temp;
         temp = temp->next;
 
-        if (node == temp) {
+        if (node == temp && temp != NULL) {
             hasNode = 1;
         }
     }
 
     if (!hasNode) {
-        printf("Node not found in list.\n");
+        fprintf(stderr, "Node not found in list.\n");
         return;
     }
 
@@ -186,13 +186,13 @@ Node *shiftList(LinkedList *list)
 {
     if (list->created == 0)
     {
-        printf("Please initialise the list you want to shift elements from.\n");
+        fprintf(stderr, "Please initialise the list you want to shift elements from.\n");
         return NULL;
     }
 
     if (list->head->next == NULL)
     {
-        printf("Cant shift head without other elements\n");
+        fprintf(stderr, "Cant shift head without other elements\n");
         return NULL;
     }
 
@@ -239,7 +239,7 @@ void printLinkedList(LinkedList *list)
 {
     if (list->created == 0)
     {
-        printf("Please initialise the list you want to print.\n");
+        fprintf(stderr, "Please initialise the list.\n");
         return;
     }
 
@@ -259,7 +259,7 @@ void freeLinkedList(LinkedList *list)
 {
     if (list->created == 0)
     {
-        printf("Please initialise the list you want to free.\n");
+        fprintf(stderr, "Please initialise the list.\n");
         return;
     }
 
