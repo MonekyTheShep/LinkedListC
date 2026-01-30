@@ -7,14 +7,10 @@
 // node = insertAtTail(&list, node->data);
 
 int main(void) {
-    int i;
     LinkedList list;
-    for (i = 0; i < 9; ++i) {
-        if (i == 0) {
-            list = createList(i);
-            continue;
-        }
-        // Check allocation
+    list = createList(0);
+    
+    for (int i = 1; i < 9; ++i) {
         Node *node = insertAtTail(&list, i);
     }  
 
