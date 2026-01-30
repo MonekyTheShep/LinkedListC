@@ -22,7 +22,9 @@ int main(void) {
         }
     }  
 
-    Node *node2 = insertAtNode(&list, list.head, 9);
+    Node *node2 = NULL;
+
+    popNode(&list, node2);
 
 
     // Check allocation
