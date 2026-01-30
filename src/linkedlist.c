@@ -95,7 +95,7 @@ Node *insertAtNode(LinkedList *list, Node *node, int data)
     int hasNode = 0;
 
     // loop through list until it is the node
-    while (temp != node)
+    while (temp != node && temp != NULL)
     {
         // set previous to temp so when loop breaks it is the previous node
         prev = temp;
@@ -151,7 +151,7 @@ void popNode(LinkedList *list, Node *node)
     int hasNode = 0;
 
     // loop through list until it is the node
-    while (temp != node)
+    while (temp != node && temp != NULL)
     {
         // set new point to previous
         prev = temp;
