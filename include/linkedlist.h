@@ -12,7 +12,6 @@ struct Node {
 typedef struct LinkedList {
     Node *head;          
     Node *tail;
-    int created;
 } LinkedList;
 
 LinkedList createList(int data);
