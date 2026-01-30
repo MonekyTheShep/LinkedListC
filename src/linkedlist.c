@@ -6,6 +6,13 @@ LinkedList createList(int data)
 {
     LinkedList list;
     list.head = (Node *)malloc(sizeof(Node));
+
+    if (!list.head) {
+        fprintf(stderr, "Memory allocation failed\n");
+        free(list.head);
+        return (LinkedList){NULL, NULL};
+    }
+
     list.head->data = data;
     list.tail = list.head;
     return list;
@@ -15,6 +22,13 @@ Node *createNode(int data)
 {
     Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = data;
+
+    if (!newNode) {
+        fprintf(stderr, "Memory allocation failed\n");
+        free(newNode);
+        return NULL;
+    }
+
     return newNode;
 }
 

@@ -2,12 +2,10 @@
 #define LINKEDLIST_H
 
 
-typedef struct Node Node;  
-
-struct Node {              
+typedef struct Node {              
     int data;
-    Node *next;
-};
+    struct Node *next;
+} Node;
 
 typedef struct LinkedList {
     Node *head;          
@@ -24,7 +22,7 @@ Node *insertAtNode(LinkedList *list, Node *node, int data);
 int sizeOfLinkedList(LinkedList *list);
 int isEmpty(LinkedList *list);
 
-struct Node *shiftList(LinkedList *list);
+Node *shiftList(LinkedList *list);
 void popList(LinkedList *list);
 void popNode(LinkedList *list, Node *node);
 
