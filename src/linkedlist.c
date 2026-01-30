@@ -89,16 +89,17 @@ Node *insertAtNode(LinkedList *list, Node *node, int data)
     int hasNode = 0;
 
     // loop through list until it is the node
-    while (temp != node || temp != NULL)
+    while (temp != node)
     {
-        if (temp == node) {
-            hasNode = 1;
-        }
-
         // set previous to temp so when loop breaks it is the previous node
         prev = temp;
 
         temp = temp->next;
+
+        if (temp == node) {
+            hasNode = 1;
+        }
+
     }
 
     if (!hasNode) {
