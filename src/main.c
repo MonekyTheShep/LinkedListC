@@ -16,18 +16,7 @@ int main(void) {
         }
         // Check allocation
         Node *node = insertAtTail(&list, i);
-        if (!node) {
-            printf("Memory allocation failed\n");
-            return 1;
-        }
     }  
-
-    // Check allocation
-    if (!list.head) {
-        printf("Memory allocation failed\n");
-        return 1;
-    }
-        
 
     printf("Is list empty: %d\n", isEmpty(&list));
     printLinkedList(&list);
