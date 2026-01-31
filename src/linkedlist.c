@@ -61,7 +61,6 @@ Node *insertAtTail(LinkedList *list, int data)
 
 Node *insertAtNode(LinkedList *list, Node *node, int data)
 {
-
     if (node == NULL) 
     {
         fprintf(stderr, "Cant insert NULL node.\n");
@@ -141,7 +140,7 @@ int popNode(LinkedList *list, Node **node)
         return 0;
     }
 
-    // if its the head set head to element after head
+    // if it's the head, set head to element after head
     if (*node == list->head)
     {
         list->head = list->head->next;
@@ -150,7 +149,7 @@ int popNode(LinkedList *list, Node **node)
         return 1;
     }
 
-    // if the node isnt the head
+    // if the node isn't the head
     Node *temp = list->head;
     Node *prev;
     int hasNode = 0;
@@ -174,7 +173,7 @@ int popNode(LinkedList *list, Node **node)
         return 0;
     }
 
-    // if its the tail set tail to previous element and remove current tail
+    // if it's the tail set tail to previous element and remove current tail
     if (*node == list->tail)
     {    
         free(*node);
@@ -186,8 +185,8 @@ int popNode(LinkedList *list, Node **node)
     }
 
 
-    // if its not tail or head
-    // point previous node to removed node's next node so chain doesnt break
+    // if it's not tail or head
+    // point previous node to removed node's next node so chain doesn't break
     prev->next = (*node)->next;
     free(*node);
     *node = NULL;
@@ -211,9 +210,9 @@ Node *shiftList(LinkedList *list)
     return prev;
 }
 
-void popList(LinkedList *list)
+Node *popList(LinkedList *list)
 {
-    return;
+    return NULL;
 }
 
 int sizeOfLinkedList(LinkedList *list)

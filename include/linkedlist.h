@@ -21,7 +21,7 @@ int sizeOfLinkedList(LinkedList *list);
 int isEmpty(LinkedList *list);
 
 Node *shiftList(LinkedList *list);
-void popList(LinkedList *list);
+Node *popList(LinkedList *list);
 int popNode(LinkedList *list, Node **node);
 
 void freeLinkedList(LinkedList *list);
