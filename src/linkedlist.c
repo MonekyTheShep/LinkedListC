@@ -127,26 +127,27 @@ Node *insertAtNode(LinkedList *list, Node *node, int data)
     return newNode;
 }
 
-void popNode(LinkedList *list, Node *node)
+int popNode(LinkedList *list, Node **node)
 {
     if (node == NULL) 
     {
         fprintf(stderr, "Cant pop NULL node.\n");
-        return;
+        return 0;
     }
 
     if (list->head->next == NULL)
     {
         fprintf(stderr, "Cant pop head if there are no other elements.\n");
-        return;
+        return 0;
     }
 
     // if its the head set head to element after head
-    if (node == list->head)
+    if (*node == list->head)
     {
         list->head = list->head->next;
-        free(node);
-        return;
+        free(*node);
+        *node = NULL;
+        return 1;
     }
 
     // if the node isnt the head
@@ -155,13 +156,13 @@ void popNode(LinkedList *list, Node *node)
     int hasNode = 0;
 
     // loop through list until it is the node
-    while (temp != node && temp != NULL)
+    while (temp != *node && temp != NULL)
     {
         // set new point to previous
         prev = temp;
         temp = temp->next;
 
-        if (node == temp) 
+        if (*node == temp)
         {
             hasNode = 1;
         }
@@ -170,24 +171,27 @@ void popNode(LinkedList *list, Node *node)
     if (!hasNode) 
     {
         fprintf(stderr, "Node not found in list.\n");
-        return;
+        return 0;
     }
 
     // if its the tail set tail to previous element and remove current tail
-    if (node == list->tail) 
+    if (*node == list->tail)
     {    
-        free(node);
+        free(*node);
+        *node = NULL;
         list->tail = prev;
         // tail always points to null address
         list->tail->next = NULL;
-        return;
+        return 1;
     }
 
 
     // if its not tail or head
     // point previous node to removed node's next node so chain doesnt break
-    prev->next = node->next;
-    free(node);
+    prev->next = (*node)->next;
+    free(*node);
+    *node = NULL;
+    return 1;
 }
 
 Node *shiftList(LinkedList *list)
