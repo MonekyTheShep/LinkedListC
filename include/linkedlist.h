@@ -1,6 +1,4 @@
-#ifndef LINKEDLIST_H
-#define LINKEDLIST_H
-
+#pragma once
 
 typedef struct Node {              
     int data;
@@ -24,8 +22,8 @@ int isEmpty(LinkedList *list);
 
 Node *shiftList(LinkedList *list);
 void popList(LinkedList *list);
-void popNode(LinkedList *list, Node *node);
+int popNode(LinkedList *list, Node **node);
 
 void freeLinkedList(LinkedList *list);
 void printLinkedList(LinkedList *list);
-#endif
+
