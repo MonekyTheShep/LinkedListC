@@ -69,26 +69,17 @@ Node *insertAtNode(LinkedList *list, Node *node, int data)
         return NULL;
     }
 
-    Node *newNode = createNode(data);
 
+    Node *newNode;
     if (node == list->head)
     {
-        newNode->next = list->head;
-
-        // replace head with new node
-        list->head = newNode;
-
+        newNode = insertAtHead(list, data);
         return newNode;
     }
 
     if (node == list->tail)
     {
-        // make old tail point to new tail
-        list->tail->next = newNode;
-        // replace old tail with new tail
-        list->tail = newNode;
-        list->tail->next = NULL;
-
+        newNode = insertAtTail(list, data);
         return newNode;
     }
 
