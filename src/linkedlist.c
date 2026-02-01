@@ -83,7 +83,9 @@ Node *insertAtNode(LinkedList *list, Node *node, int data)
         return newNode;
     }
 
-    // if the node isnt the head
+    newNode = createNode(data);
+
+    // if the node isn't the head
     Node *temp = list->head;
     Node *prev;
     int hasNode = 0;
