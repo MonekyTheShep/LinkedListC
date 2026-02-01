@@ -1,6 +1,6 @@
 #pragma once
 
-typedef struct Node {              
+typedef struct Node {
     int data;
     struct Node *next;
 } Node;
@@ -24,6 +24,7 @@ Node *shiftList(LinkedList *list);
 Node *popList(LinkedList *list);
 int popNode(LinkedList *list, Node **node);
 
+LinkedList clearList(LinkedList *list);
 void freeLinkedList(LinkedList *list);
 void printLinkedList(LinkedList *list);
 
