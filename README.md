@@ -26,12 +26,15 @@ Linked List implementation in c
 
 ```int isEmpty(LinkedList *list)``` Checks if list is empty
 
-```Node *shiftList(LinkedList *list)``` Returns the head and removes it (FIFO) acts as a queue. 
+```Node *shiftList(LinkedList *list)``` Returns the head and removes it from list (FIFO) acts as a queue. 
 It is not part of the list so you must free the node.
 
 ```Node *popList(LinkedList *list)``` Not implemented
 
 ```int popNode(LinkedList *list, Node **node)``` Removes and frees a node using a pointer to a node from the list.
+
+
+```LinkedList clearList(LinkedList *list)``` Returns an empty list.
 
 ```void freeLinkedList(LinkedList *list)``` Frees every element of linked list from memory
 
