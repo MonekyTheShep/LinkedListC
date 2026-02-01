@@ -13,6 +13,7 @@ LinkedList createList(int data)
         return (LinkedList){NULL, NULL};
     }
 
+    list.head->next = NULL;
     list.head->data = data;
     list.tail = list.head;
     return list;
@@ -55,6 +56,7 @@ Node *insertAtTail(LinkedList *list, int data)
     list->tail->next = newNode;
     // replace old tail with new tail
     list->tail = newNode;
+    list->tail->next = NULL;
 
     return newNode;
 }
