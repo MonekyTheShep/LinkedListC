@@ -7,7 +7,7 @@ int main(void) {
     list = createList(0);
 
     for (int i = 1; i < 9; ++i) {
-        Node *node = insertAtTail(&list, i);
+        insertAtTail(&list, i);
     }
 
     printf("Is list empty: %d\n", isEmpty(&list));
