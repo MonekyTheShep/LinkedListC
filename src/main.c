@@ -8,7 +8,7 @@ int main(void) {
 
     for (int i = 1; i < 9; ++i) {
         Node *node = insertAtTail(&list, i);
-    }  
+    }
 
     printf("Is list empty: %d\n", isEmpty(&list));
     printLinkedList(&list);
