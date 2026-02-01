@@ -87,6 +87,7 @@ Node *insertAtNode(LinkedList *list, Node *node, int data)
         list->tail->next = newNode;
         // replace old tail with new tail
         list->tail = newNode;
+        list->tail->next = NULL;
 
         return newNode;
     }
