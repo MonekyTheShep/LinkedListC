@@ -7,6 +7,7 @@ Linked List implementation in c
 ### Structs:
 
 ```typedef struct Node``` Stores data and next node in list.
+
 ```typedef struct LinkedList``` Stores the head and tail of a list.
 
 ### Functions:
