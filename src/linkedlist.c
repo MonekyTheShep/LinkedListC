@@ -35,6 +35,12 @@ Node *createNode(int data)
 
 Node *insertAtHead(LinkedList *list, int data)
 {
+
+    if (list->head == NULL || list->tail == NULL) {
+        fprintf(stderr, "Cant insert element at head of NULL list.\n");
+        return NULL;
+    }
+
     Node *newNode = createNode(data);
 
     // swap the tail with new node
@@ -48,6 +54,12 @@ Node *insertAtHead(LinkedList *list, int data)
 
 Node *insertAtTail(LinkedList *list, int data)
 {
+
+    if (list->head == NULL || list->tail == NULL) {
+        fprintf(stderr, "Cant insert element at tail of NULL list.\n");
+        return NULL;
+    }
+
     Node *newNode = createNode(data);
 
     // swap the tail with new node
@@ -63,6 +75,12 @@ Node *insertAtTail(LinkedList *list, int data)
 
 Node *insertAtNode(LinkedList *list, Node *node, int data)
 {
+
+    if (list->head == NULL || list->tail == NULL) {
+        fprintf(stderr, "Cant insert element of NULL list.\n");
+        return NULL;
+    }
+
     if (node == NULL) 
     {
         fprintf(stderr, "Cant insert NULL node.\n");
@@ -124,6 +142,12 @@ Node *insertAtNode(LinkedList *list, Node *node, int data)
 
 int popNode(LinkedList *list, Node **node)
 {
+
+    if (list->head == NULL || list->tail == NULL) {
+        fprintf(stderr, "Cant pop element of NULL list.\n");
+        return 0;
+    }
+
     if (node == NULL) 
     {
         fprintf(stderr, "Cant pop NULL node.\n");
@@ -191,6 +215,12 @@ int popNode(LinkedList *list, Node **node)
 
 Node *shiftList(LinkedList *list)
 {
+    if (list->head == NULL || list->tail == NULL) {
+        fprintf(stderr, "Cant shift head of NULL list.\n");
+        return 0;
+    }
+
+
     if (list->head->next == NULL)
     {
         fprintf(stderr, "Cant shift head without other elements\n");
@@ -213,6 +243,11 @@ Node *popList(LinkedList *list)
 
 int sizeOfLinkedList(LinkedList *list)
 {
+    if (list->head == NULL || list->tail == NULL) {
+        fprintf(stderr, "Cant size of NULL list.\n");
+        return 0;
+    }
+
     Node *temp = list->head;
     int size = 0;
 
@@ -227,6 +262,12 @@ int sizeOfLinkedList(LinkedList *list)
 }
 
 int isEmpty(LinkedList *list) {
+
+    if (list->head == NULL || list->tail == NULL) {
+        fprintf(stderr, "Cant check if NULL list empty.\n");
+        return 0;
+    }
+
     if (list->head->next == NULL)
     {
         return 1;
@@ -239,6 +280,12 @@ int isEmpty(LinkedList *list) {
 
 void printLinkedList(LinkedList *list)
 {
+
+    if (list->head == NULL || list->tail == NULL) {
+        fprintf(stderr, "Cant print NULL list.\n");
+        return;
+    }
+
     // Print linked list
     Node *temp = list->head;
 
@@ -251,8 +298,31 @@ void printLinkedList(LinkedList *list)
     printf("\n");
 }
 
+LinkedList clearList(LinkedList *list) {
+    LinkedList clearedList = {NULL, NULL};
+
+    if (list->head == NULL || list->tail == NULL) {
+        fprintf(stderr, "Cant free NULL list.\n");
+        return (LinkedList){NULL, NULL};
+    }
+    // Free allocated memory
+    Node *temp = list->head;
+    while (temp != NULL)
+    {
+        Node *next = temp->next;
+        free(temp);
+        temp = next;
+    }
+    return clearedList;
+}
+
 void freeLinkedList(LinkedList *list)
 {
+    if (list == NULL) {
+        fprintf(stderr, "Cant free NULL list.\n");
+        return;
+    }
+
     // Free allocated memory
     Node *temp = list->head;
     while (temp != NULL)
