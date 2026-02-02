@@ -1,46 +1,6 @@
 # LinkedListC
 Linked List implementation in c
 
-
-## linkedlist.h
-
-### Structs:
-
-```typedef struct Node``` Stores data and next node in list.
-
-```typedef struct LinkedList``` Stores the head and tail of a list.
-
-### Functions:
-
-```LinkedList createList(int data)``` Returns list with head initialized.
-
-```Node *createNode(int data)``` Create node to insert into the list.
-
-```Node *insertAtTail(LinkedList *list, int data)``` Insert node at the tail of a list.
-
-```Node *insertAtHead(LinkedList *list, int data)``` Insert node at the head of a list.
-
-```Node *insertAtNode(LinkedList *list, Node *node, int data)``` Insert before a node in list.
-
-```int sizeOfLinkedList(LinkedList *list)``` Returns the size of the list
-
-```int isEmpty(LinkedList *list)``` Checks if list is empty
-
-```Node *shiftList(LinkedList *list)``` Returns the head and removes it from list (FIFO) acts as a queue. 
-It is not part of the list so you must free the node.
-
-```Node *popList(LinkedList *list)``` Not implemented
-
-```int popNode(LinkedList *list, Node **node)``` Removes and frees a node using a pointer to a node from the list.
-
-
-```LinkedList clearList(LinkedList *list)``` Returns an empty list.
-
-```void freeLinkedList(LinkedList *list)``` Frees every element of linked list from memory
-
-```void printLinkedList(LinkedList *list)``` Prints every element of linked list
-
-
 ## Example Usage
 ```c
 #include <stdio.h>
