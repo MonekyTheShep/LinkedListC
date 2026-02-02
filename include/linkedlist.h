@@ -128,6 +128,15 @@ Node *popList(LinkedList *list);
 
 int popNode(LinkedList *list, Node **node);
 
+
+/**
+ * @brief Sorts a list.
+ *
+ * @param list The list you want to clear.
+ */
+
+void sortList(LinkedList *list);
+
 /**
  * @brief Clears a list.
  *
