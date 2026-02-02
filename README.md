@@ -1,6 +1,8 @@
 # LinkedListC
 Linked List implementation in c
 
+Docs: https://monekytheshep.github.io/LinkedListC/
+
 ## Example Usage
 ```c
 #include <stdio.h>
