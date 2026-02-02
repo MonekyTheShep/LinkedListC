@@ -209,6 +209,21 @@ int popNode(LinkedList *list, Node **node)
     return 1;
 }
 
+void sortList(LinkedList *list) {
+    if (list->head == NULL || list->tail == NULL) {
+        fprintf(stderr, "Cant sort NULL list.\n");
+        return;
+    }
+
+    if (list->head->next == NULL)
+    {
+        fprintf(stderr, "Cant sort list without other elements\n");
+        return;
+    }
+
+
+}
+
 Node *shiftList(LinkedList *list)
 {
     if (list->head == NULL || list->tail == NULL) {
@@ -249,8 +264,7 @@ int sizeOfLinkedList(LinkedList *list)
 
     while (temp != NULL)
     {
-        if (temp->next != NULL)
-            size++;
+        size++;
 
         temp = temp->next;
     }
