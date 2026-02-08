@@ -139,7 +139,8 @@ Node *insertAtNode(LinkedList *list, Node *node, int data)
 
 int popNode(LinkedList *list, Node **node)
 {
-    if (list->head == NULL || list->tail == NULL) {
+    if (list->head == NULL || list->tail == NULL)
+    {
         fprintf(stderr, "Cant pop element of NULL list.\n");
         return 0;
     }
@@ -210,7 +211,8 @@ int popNode(LinkedList *list, Node **node)
 }
 
 void sortList(LinkedList *list) {
-    if (list->head == NULL || list->tail == NULL) {
+    if (list->head == NULL || list->tail == NULL)
+    {
         fprintf(stderr, "Cant sort NULL list.\n");
         return;
     }
@@ -226,7 +228,8 @@ void sortList(LinkedList *list) {
 
 Node *shiftList(LinkedList *list)
 {
-    if (list->head == NULL || list->tail == NULL) {
+    if (list->head == NULL || list->tail == NULL)
+    {
         fprintf(stderr, "Cant shift head of NULL list.\n");
         return 0;
     }
@@ -254,7 +257,8 @@ Node *shiftList(LinkedList *list)
 
 int sizeOfLinkedList(LinkedList *list)
 {
-    if (list->head == NULL || list->tail == NULL) {
+    if (list->head == NULL || list->tail == NULL)
+    {
         fprintf(stderr, "Cant size of NULL list.\n");
         return 0;
     }
@@ -273,7 +277,8 @@ int sizeOfLinkedList(LinkedList *list)
 
 int isEmpty(LinkedList *list)
 {
-    if (list->head == NULL || list->tail == NULL) {
+    if (list->head == NULL || list->tail == NULL)
+    {
         fprintf(stderr, "Cant check if NULL list empty.\n");
         return 0;
     }
@@ -291,7 +296,8 @@ int isEmpty(LinkedList *list)
 
 void printLinkedList(LinkedList *list)
 {
-    if (list->head == NULL || list->tail == NULL) {
+    if (list->head == NULL || list->tail == NULL)
+    {
         fprintf(stderr, "Cant print NULL list.\n");
         return;
     }
@@ -311,7 +317,8 @@ void printLinkedList(LinkedList *list)
 LinkedList clearList(LinkedList *list) {
     LinkedList clearedList = {NULL, NULL};
 
-    if (list->head == NULL || list->tail == NULL) {
+    if (list->head == NULL || list->tail == NULL)
+    {
         fprintf(stderr, "Cant free NULL list.\n");
         return (LinkedList){NULL, NULL};
     }
@@ -328,7 +335,8 @@ LinkedList clearList(LinkedList *list) {
 
 void freeLinkedList(LinkedList *list)
 {
-    if (list == NULL) {
+    if (list == NULL)
+    {
         fprintf(stderr, "Cant free NULL list.\n");
         return;
     }
