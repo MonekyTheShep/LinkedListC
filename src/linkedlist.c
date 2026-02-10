@@ -35,7 +35,8 @@ Node *createNode(int data)
 
 Node *insertAtHead(LinkedList *list, int data)
 {
-    if (list->head == NULL || list->tail == NULL) {
+    if (list->head == NULL || list->tail == NULL)
+    {
         fprintf(stderr, "Cant insert element at head of NULL list.\n");
         return NULL;
     }
@@ -53,7 +54,8 @@ Node *insertAtHead(LinkedList *list, int data)
 
 Node *insertAtTail(LinkedList *list, int data)
 {
-    if (list->head == NULL || list->tail == NULL) {
+    if (list->head == NULL || list->tail == NULL)
+    {
         fprintf(stderr, "Cant insert element at tail of NULL list.\n");
         return NULL;
     }
@@ -73,7 +75,8 @@ Node *insertAtTail(LinkedList *list, int data)
 
 Node *insertAtNode(LinkedList *list, Node *node, int data)
 {
-    if (list->head == NULL || list->tail == NULL) {
+    if (list->head == NULL || list->tail == NULL)
+    {
         fprintf(stderr, "Cant insert element of NULL list.\n");
         return NULL;
     }
@@ -210,7 +213,8 @@ int popNode(LinkedList *list, Node **node)
     return 1;
 }
 
-void sortList(LinkedList *list) {
+void sortList(LinkedList *list)
+{
     if (list->head == NULL || list->tail == NULL)
     {
         fprintf(stderr, "Cant sort NULL list.\n");
@@ -222,8 +226,6 @@ void sortList(LinkedList *list) {
         fprintf(stderr, "Cant sort list without other elements\n");
         return;
     }
-
-
 }
 
 Node *shiftList(LinkedList *list)
@@ -314,7 +316,8 @@ void printLinkedList(LinkedList *list)
     printf("\n");
 }
 
-LinkedList clearList(LinkedList *list) {
+LinkedList clearList(LinkedList *list)
+{
     LinkedList clearedList = {NULL, NULL};
 
     if (list->head == NULL || list->tail == NULL)
