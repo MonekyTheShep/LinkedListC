@@ -43,7 +43,7 @@ Node *insertAtHead(LinkedList *list, int data)
 
     Node *newNode = createNode(data);
 
-    // swap the tail with new node
+    // swap the head with new node
 
     // make new node point to head
     newNode->next = list->head;
