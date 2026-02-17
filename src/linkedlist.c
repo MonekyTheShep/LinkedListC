@@ -105,7 +105,7 @@ Node *insertAtNode(LinkedList *list, Node *node, int data)
 
     // if the node isn't the head
     Node *temp = list->head;
-    Node *prev = list->head;
+    Node *prev = NULL;
     int hasNode = 0;
 
     // loop through list until it is the node
@@ -121,6 +121,12 @@ Node *insertAtNode(LinkedList *list, Node *node, int data)
             hasNode = 1;
         }
 
+    }
+
+    if (prev == NULL) {
+        fprintf(stderr, "Error occurred inserting in list.\n");
+        free(newNode);
+        return NULL;
     }
 
     if (!hasNode) 
@@ -171,7 +177,7 @@ int popNode(LinkedList *list, Node **node)
 
     // if the node isn't the head
     Node *temp = list->head;
-    Node *prev = list->head;
+    Node *prev = NULL;
     int hasNode = 0;
 
     // loop through list until it is the node
@@ -185,6 +191,11 @@ int popNode(LinkedList *list, Node **node)
         {
             hasNode = 1;
         }
+    }
+
+    if (prev == NULL) {
+        fprintf(stderr, "Error occurred removing in list.\n");
+        return 0;
     }
 
     if (!hasNode) 
