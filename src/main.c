@@ -6,7 +6,8 @@ int main(void) {
     LinkedList list;
     list = createList(0);
 
-    for (int i = 1; i < 9; ++i) {
+    for (int i = 1; i < 9; ++i)
+    {
         insertAtTail(&list, i);
     }
 
