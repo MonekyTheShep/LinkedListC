@@ -11,7 +11,8 @@
  * @brief A node to be inserted into a linked list.
  */
 
-typedef struct Node {
+typedef struct Node
+{
     int data;
     struct Node *next;
 } Node;
@@ -21,7 +22,8 @@ typedef struct Node {
  * @brief The linked list which contains head and tail node. You can traverse the list through the head node.
  */
 
-typedef struct LinkedList {
+typedef struct LinkedList
+{
     Node *head;          
     Node *tail;
 } LinkedList;
