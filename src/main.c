@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include "linkedlist.h"
 
-int main(void) {
+int main(void)
+{
     LinkedList list;
     list = createList(0);
 
