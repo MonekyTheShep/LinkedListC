@@ -20,5 +20,4 @@ target_compile_options(${PROJECT_NAME} PRIVATE
         -fsanitize=address
 )
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=address")
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fsanitize=address")
+target_link_options(${PROJECT_NAME} PRIVATE -fsanitize=address)
