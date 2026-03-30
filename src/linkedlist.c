@@ -344,7 +344,7 @@ LinkedList clearList(LinkedList *list)
     while (temp != NULL)
     {
         Node *next = temp->next;
-        temp = NULL;
+        free(temp);
         temp = next;
     }
     return clearedList;
@@ -363,7 +363,7 @@ void freeLinkedList(LinkedList *list)
     while (temp != NULL)
     {
         Node *next = temp->next;
-        temp = NULL;
+        free(temp);
         temp = next;
     }
 }
